@@ -3,7 +3,7 @@ export default function Layout() {
   return (
    <main >
 
-     <Outlet /> {/* Child pages render here */}
+     <Outlet /> 
      
    </main>
   );

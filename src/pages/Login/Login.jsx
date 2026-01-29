@@ -39,7 +39,7 @@ export default function Login() {
             
             {/* Sign In Button */}
 
-            <Button type="submit" className="w-full py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-xl shadow-lg hover:scale-105 transform transition-all duration-300">
+            <Button type="submit" className="w-full py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-xl shadow-lg hover:scale-105 transform transition-all duration-300 cursor-pointer">
               Sign In
             </Button>
            
