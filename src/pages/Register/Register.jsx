@@ -1,4 +1,6 @@
-export default function RegisterPage() {
+import Button from '../../components/Button/button'
+
+export default function Register() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-4">
       <div className="w-full max-w-sm">
@@ -61,17 +63,21 @@ export default function RegisterPage() {
             </div>
 
             {/* Sign Up Button */}
-            <button
+
+            <Button
               type="submit"
-              className="w-full py-3 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:scale-105 transform transition-all duration-300 cursor-pointer"
+              className="w-full py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-xl shadow-lg hover:scale-105 transform transition-all duration-300"
             >
               Sign Up
-            </button>
+            </Button>
 
             {/* Login Link */}
             <p className="text-center text-slate-300 text-sm mt-4">
               Already have an account?{' '}
-              <a href="/" className="text-blue-400 hover:text-blue-300 font-medium">
+              <a
+                href="/"
+                className="text-blue-400 hover:text-blue-300 font-medium"
+              >
                 Sign in
               </a>
             </p>
@@ -79,5 +85,5 @@ export default function RegisterPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }

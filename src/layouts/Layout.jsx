@@ -1,13 +1,10 @@
-import { Outlet } from 'react-router-dom';
-
+import {Outlet} from "react-router-dom"
 export default function Layout() {
   return (
-    <div>
-      
-      <main>
-        <Outlet /> {/* This is REQUIRED for nested routes */}
-      </main>
-      
-    </div>
+   <main >
+
+     <Outlet /> {/* Child pages render here */}
+     
+   </main>
   );
 }
