@@ -1,39 +1,51 @@
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-4">
       <div className="w-full max-w-sm">
-        <div className="bg-slate-900 rounded-xl p-8 shadow-2xl border border-slate-800">
-          <h1 className="text-2xl font-bold text-white text-center mb-6">Login</h1>
+        <div className="bg-slate-900/80 backdrop-blur-lg rounded-2xl p-8 shadow-[0_15px_30px_rgba(0,0,0,0.5)] border border-slate-700">
+          <h1 className="text-3xl font-extrabold text-white text-center mb-8 tracking-wide">
+            Login
+          </h1>
           
-          <form className="space-y-4">
-            <div>
+          <form className="space-y-6">
+            {/* Email Input */}
+            <div className="relative">
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white
-                  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="peer w-full bg-transparent border-b-2 border-slate-600 py-2 text-white placeholder-transparent focus:outline-none focus:border-blue-400 transition-all"
               />
+              <label className="absolute left-0 -top-1 text-slate-400 text-sm peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-slate-500 peer-placeholder-shown:text-base transition-all">
+                Email
+              </label>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all peer-focus:w-full"></span>
             </div>
             
-            <div>
+            {/* Password Input */}
+            <div className="relative">
               <input
                 type="password"
                 placeholder="Password"
-                className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white
-                  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="peer w-full bg-transparent border-b-2 border-slate-600 py-2 text-white placeholder-transparent focus:outline-none focus:border-blue-400 transition-all"
               />
+              <label className="absolute left-0 -top-1 text-slate-400 text-sm peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-slate-500 peer-placeholder-shown:text-base transition-all">
+                Password
+              </label>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all peer-focus:w-full"></span>
             </div>
             
+            {/* Sign In Button */}
             <button
               type="submit"
-              className="w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+              className="w-full py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-xl shadow-lg hover:scale-105 transform transition-all duration-300 cursor-pointer"
             >
               Sign In
             </button>
             
-            <p className="text-center text-slate-400 text-sm mt-4">
+            {/* Signup Link */}
+            <p className="text-center text-slate-300 text-sm mt-4">
               Need an account?{' '}
-              <a href="/signup" className="text-blue-400 hover:text-blue-300">
+              <a href="/signup" className="text-pink-400 hover:text-pink-300 font-medium">
                 Sign up
               </a>
             </p>
