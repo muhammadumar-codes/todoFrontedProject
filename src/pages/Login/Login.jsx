@@ -1,27 +1,59 @@
-export default function login() {
+import Button from "../../components/Button/button";
+
+
+export default function Login() {
   return (
-    <>
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-950 to-black">
-        <div className="w-full max-w-md bg-gradient-to-b from-slate-950 to-slate-900 border border-blue-500/20 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-center mb-6 text-blue-400">
-            Welcome Back, jani
-          </h2>
-
-          <input
-            className="w-full mb-4 px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white"
-            placeholder="Email"
-          />
-          <input
-            className="w-full mb-6 px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white"
-            placeholder="Password"
-            type="password"
-          />
-
-          <button className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 cursor-pointer">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-4">
+      <div className="w-full max-w-sm">
+        <div className="bg-slate-900/80 backdrop-blur-lg rounded-2xl p-8 shadow-[0_15px_30px_rgba(0,0,0,0.5)] border border-slate-700">
+          <h1 className="text-3xl font-extrabold text-white text-center mb-8 tracking-wide">
             Login
-          </button>
+          </h1>
+          
+          <form className="space-y-6">
+            {/* Email Input */}
+            <div className="relative">
+              <input
+                type="email"
+                placeholder="Email"
+                className="peer w-full bg-transparent border-b-2 border-slate-600 py-2 text-white placeholder-transparent focus:outline-none focus:border-blue-400 transition-all"
+              />
+              <label className="absolute left-0 -top-1 text-slate-400 text-sm peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-slate-500 peer-placeholder-shown:text-base transition-all">
+                Email
+              </label>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all peer-focus:w-full"></span>
+            </div>
+            
+            {/* Password Input */}
+            <div className="relative">
+              <input
+                type="password"
+                placeholder="Password"
+                className="peer w-full bg-transparent border-b-2 border-slate-600 py-2 text-white placeholder-transparent focus:outline-none focus:border-blue-400 transition-all"
+              />
+              <label className="absolute left-0 -top-1 text-slate-400 text-sm peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-slate-500 peer-placeholder-shown:text-base transition-all">
+                Password
+              </label>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all peer-focus:w-full"></span>
+            </div>
+            
+            {/* Sign In Button */}
+
+            <Button type="submit" className="w-full py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold rounded-xl shadow-lg hover:scale-105 transform transition-all duration-300 cursor-pointer">
+              Sign In
+            </Button>
+           
+            
+            {/* Signup Link */}
+            <p className="text-center text-slate-300 text-sm mt-4">
+              Need an account?{' '}
+              <a href="/register" className="text-pink-400 hover:text-pink-300 font-medium">
+                Sign up
+              </a>
+            </p>
+          </form>
         </div>
       </div>
-    </>
-  )
+    </div>
+  );
 }
