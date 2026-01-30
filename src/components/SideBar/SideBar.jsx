@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 min-h-screen bg-slate-900/80 backdrop-blur-xl border-r border-slate-700 p-6 flex flex-col">
+    <aside className=" flex justify-between w-64 min-h-screen bg-slate-900/80 backdrop-blur-xl border-r border-slate-700 p-6 flex flex-col">
       
       {/* Logo */}
       <h1 className="text-2xl font-extrabold text-white">
@@ -10,7 +10,7 @@ export default function Sidebar() {
       </h1>
 
       {/* Middle Section (equal spacing) */}
-      <div className="flex flex-col justify-evenly flex-1">
+      <div className="flex flex-col gap-4">
         <NavLink to="/" className="sidebar-link">
           Dashboard
         </NavLink>
@@ -28,7 +28,7 @@ export default function Sidebar() {
       <button
         className="w-full px-4 py-2 rounded-lg
         bg-gradient-to-r from-red-600 to-pink-600
-        text-white font-semibold hover:opacity-90 transition"
+        text-white font-semibold hover:opacity-90 transition cursor-pointer"
       >
         Logout
       </button>

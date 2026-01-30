@@ -20,13 +20,13 @@ export default function App() {
 
       {/* ===== Auth Routes (NO sidebar) ===== */}
       <Route element={<AuthLayout />}>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
 
       {/* ===== Dashboard Routes (WITH sidebar) ===== */}
       <Route element={<DashboardLayout />}>
-        <Route path="/dashboard " element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />} />
       </Route>
 
       {/* ===== Not Found ===== */}
