@@ -1,6 +1,17 @@
 import Button from '../../components/Button/button'
 
+
+// AXIOS 
+import axios from "axios"
+import { useFetch } from '../../hook/useFetch'
+
+
+
 export default function Register() {
+
+
+
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-4">
       <div className="w-full max-w-sm">
