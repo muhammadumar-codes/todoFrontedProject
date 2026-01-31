@@ -1,7 +1,35 @@
+import { useState } from "react";
 import Button from "../../components/Button/button";
 
 
 export default function Login() {
+
+const [formData,setFormData]=useState({
+  email:"",
+  password:""
+})
+
+
+const handleChange=(e)=>{
+  const {name,value}=e.target
+  setFormData((prev)=>(
+    console.log("prev",prev),
+    {
+    ...prev,
+    [name]:value
+
+  }))
+
+
+}
+
+const handleSubmit=(e)=>{
+  e.preventDefault()
+  console.log(formData)
+
+}
+
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-4">
       <div className="w-full max-w-sm">
@@ -10,10 +38,13 @@ export default function Login() {
             Login
           </h1>
           
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Email Input */}
             <div className="relative">
               <input
+              onChange={handleChange}
+              name="email"
+              value={formData.email}
                 type="email"
                 placeholder="Email"
                 className="peer w-full bg-transparent border-b-2 border-slate-600 py-2 text-white placeholder-transparent focus:outline-none focus:border-blue-400 transition-all"
@@ -27,6 +58,9 @@ export default function Login() {
             {/* Password Input */}
             <div className="relative">
               <input
+              onChange={handleChange}
+              name="password"
+              value={formData.password}
                 type="password"
                 placeholder="Password"
                 className="peer w-full bg-transparent border-b-2 border-slate-600 py-2 text-white placeholder-transparent focus:outline-none focus:border-blue-400 transition-all"

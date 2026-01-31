@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
 // ===* useFetch component *===
 export function useFetch({ url }) {
   const [data, setData] = useState(null);
@@ -8,7 +9,7 @@ export function useFetch({ url }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!url) {
+      if (!url) {
       console.warn(" Please provide a valid API URL!");
       setIsLoading(false);
       return;
@@ -19,18 +20,18 @@ export function useFetch({ url }) {
     const controller = new AbortController();
 
     const fetchData = async () => {
-      try {
-        setIsLoading(true);
+        try {
+            setIsLoading(true);
 
-        // ===* Pass controller.signal to axios to handle cancellation*===
-
+            // ===* Pass controller.signal to axios to handle cancellation*===
+    
         const response = await axios.get(url, { signal: controller.signal });
 
         setData(response.data);
         setError(null);
       } catch (err) {
-        //
-        // ===*Check if the request was cancelled*===
+          //
+          // ===*Check if the request was cancelled*===
 
         if (axios.isCancel(err)) {
           console.log(" Request cancelled by the user or unmount.");
@@ -39,8 +40,8 @@ export function useFetch({ url }) {
           setError("Something went wrong while fetching data.");
         }
       } finally {
-        setIsLoading(false);
-      }
+          setIsLoading(false);
+        }
     };
 
     fetchData();
@@ -48,7 +49,7 @@ export function useFetch({ url }) {
     // ===*  Cleanup: runs when component unmounts*===
 
     return () => {
-      controller.abort(); //
+        controller.abort(); //
     };
   }, [url]);
 
